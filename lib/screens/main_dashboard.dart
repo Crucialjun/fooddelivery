@@ -14,6 +14,15 @@ class MainDashboard extends StatefulWidget {
 
 class _MainDashboardState extends State<MainDashboard> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
+  double _currentPageValue = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController.addListener(() {
+      _currentPageValue = _pageController.page ?? 0.0;
+    });
+  }
 
   @override
   void dispose() {
@@ -76,7 +85,10 @@ class _MainDashboardState extends State<MainDashboard> {
             controller: _pageController,
             itemCount: 5,
             itemBuilder: ((context, index) {
-              return DashboardPageviewItem(index: index);
+              return DashboardPageviewItem(
+                index: index,
+                pageValue: _currentPageValue,
+              );
             })),
       ),
     );
