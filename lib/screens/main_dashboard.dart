@@ -13,7 +13,7 @@ class MainDashboard extends StatefulWidget {
 }
 
 class _MainDashboardState extends State<MainDashboard> {
-  final PageController _pageController = PageController(viewportFraction: 0.85);
+  final PageController _pageController = PageController(viewportFraction: 0.75);
 
   @override
   void dispose() {
@@ -26,20 +26,19 @@ class _MainDashboardState extends State<MainDashboard> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        toolbarHeight: 120,
         backgroundColor: Colors.white,
         systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Colors.white,
             statusBarBrightness: Brightness.light,
             statusBarIconBrightness: Brightness.dark),
         flexibleSpace: Container(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 8),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 0),
           child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: 45,
+                  height: 50,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
