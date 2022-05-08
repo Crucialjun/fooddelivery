@@ -13,7 +13,7 @@ class MainDashboard extends StatefulWidget {
 }
 
 class _MainDashboardState extends State<MainDashboard> {
-  final PageController _pageController = PageController(viewportFraction: 0.75);
+  final PageController _pageController = PageController(viewportFraction: 0.85);
 
   @override
   void dispose() {
