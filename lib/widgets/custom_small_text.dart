@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/app_colors.dart';
+import 'package:fooddelivery/utils/dimensions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomSmallText extends StatelessWidget {
   final Color color;
   final String text;
-  final double textHeight;
-  const CustomSmallText(
-      {Key? key,
-      this.color = AppColors.mainBlackColor,
-      required this.text,
-      this.textHeight = 1.2})
-      : super(key: key);
+  const CustomSmallText({
+    Key? key,
+    this.color = AppColors.mainBlackColor,
+    required this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +18,10 @@ class CustomSmallText extends StatelessWidget {
       text,
       maxLines: 1,
       style: TextStyle(
-          height: textHeight,
+          height: AppDimensions.textHeight1pt2,
           color: color,
           fontFamily: GoogleFonts.roboto().fontFamily,
-          fontSize: 12),
+          fontSize: AppDimensions.font12),
     );
   }
 }

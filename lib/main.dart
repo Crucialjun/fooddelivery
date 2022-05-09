@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/screens/main_dashboard.dart';
 import 'package:fooddelivery/utils/custom_scroll_behaviour.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       scrollBehavior: CustomScrollBehaviour(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

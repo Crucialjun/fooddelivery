@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/app_colors.dart';
+import 'package:fooddelivery/utils/dimensions.dart';
 import 'package:fooddelivery/widgets/custom_small_text.dart';
 
 class FoodsLowerDetails extends StatelessWidget {
@@ -11,45 +12,48 @@ class FoodsLowerDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          children: const [
+          children: [
             Icon(
               Icons.circle_sharp,
               color: AppColors.yellowColor,
+              size: AppDimensions.iconsSize24,
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
-            CustomSmallText(text: "Normal")
+            const CustomSmallText(text: "Normal")
           ],
         ),
         const SizedBox(
           width: 15,
         ),
         Row(
-          children: const [
+          children: [
             Icon(
               Icons.location_on,
+              size: AppDimensions.iconsSize24,
               color: AppColors.mainColor,
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
-            CustomSmallText(text: "1.7km")
+            const CustomSmallText(text: "1.7km")
           ],
         ),
         const SizedBox(
           width: 15,
         ),
         Row(
-          children: const [
+          children: [
             Icon(
               Icons.access_time_rounded,
               color: AppColors.iconColor2,
+              size: AppDimensions.iconsSize24,
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
-            CustomSmallText(text: "32min")
+            const CustomSmallText(text: "32min")
           ],
         ),
       ],

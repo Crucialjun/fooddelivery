@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/utils/dimensions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomBigText extends StatelessWidget {
@@ -16,7 +17,7 @@ class CustomBigText extends StatelessWidget {
           color: color,
           fontWeight: FontWeight.w400,
           fontFamily: GoogleFonts.roboto().fontFamily,
-          fontSize: 20),
+          fontSize: AppDimensions.font20),
     );
   }
 }
