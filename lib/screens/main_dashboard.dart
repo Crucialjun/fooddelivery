@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fooddelivery/app_colors.dart';
@@ -20,7 +21,9 @@ class _MainDashboardState extends State<MainDashboard> {
   void initState() {
     super.initState();
     _pageController.addListener(() {
-      _currentPageValue = _pageController.page ?? 0.0;
+      setState(() {
+        _currentPageValue = _pageController.page ?? 0.0;
+      });
     });
   }
 
@@ -79,17 +82,32 @@ class _MainDashboardState extends State<MainDashboard> {
               ]),
         ),
       ),
-      body: SizedBox(
-        height: 320,
-        child: PageView.builder(
-            controller: _pageController,
-            itemCount: 5,
-            itemBuilder: ((context, index) {
-              return DashboardPageviewItem(
-                index: index,
-                pageValue: _currentPageValue,
-              );
-            })),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 320,
+            child: PageView.builder(
+                controller: _pageController,
+                itemCount: 5,
+                itemBuilder: ((context, index) {
+                  return DashboardPageviewItem(
+                    index: index,
+                    pageValue: _currentPageValue,
+                  );
+                })),
+          ),
+          DotsIndicator(
+            dotsCount: 5,
+            position: _currentPageValue,
+            decorator: DotsDecorator(
+              activeColor: AppColors.mainColor,
+              size: const Size.square(9.0),
+              activeSize: const Size(18.0, 9.0),
+              activeShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0)),
+            ),
+          )
+        ],
       ),
     );
   }
