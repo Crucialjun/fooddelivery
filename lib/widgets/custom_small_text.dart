@@ -8,7 +8,7 @@ class CustomSmallText extends StatelessWidget {
   final String text;
   const CustomSmallText({
     Key? key,
-    this.color = AppColors.mainBlackColor,
+    this.color = AppColors.titleColor,
     required this.text,
   }) : super(key: key);
 

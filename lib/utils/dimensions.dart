@@ -14,12 +14,14 @@ class AppDimensions {
   static double height30 = screenHeight / 28.13;
   static double height45 = screenHeight / 18.76;
   static double height60 = screenHeight / 14.07;
+  static double height120 = screenHeight / 7.03;
 
   static double width10 = screenWidth / 39;
   static double width15 = screenWidth / 26;
   static double width20 = screenWidth / 19.50;
   static double width30 = screenWidth / 13;
   static double width45 = screenWidth / 13;
+  static double width120 = screenWidth / 3.25;
 
   static double font20 = screenHeight / 42.20;
   static double font12 = screenHeight / 70.33;
