@@ -6,6 +6,7 @@ import 'package:fooddelivery/utils/dimensions.dart';
 import 'package:fooddelivery/widgets/custom_big_text.dart';
 import 'package:fooddelivery/widgets/custom_small_text.dart';
 import 'package:fooddelivery/widgets/dashboard_pageview_item.dart';
+import 'package:fooddelivery/widgets/food_lower_details.dart';
 
 class MainDashboard extends StatefulWidget {
   const MainDashboard({Key? key}) : super(key: key);
@@ -94,7 +95,6 @@ class _MainDashboardState extends State<MainDashboard> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.white,
           child: Column(
             children: [
               SizedBox(
@@ -156,21 +156,54 @@ class _MainDashboardState extends State<MainDashboard> {
                     return Container(
                       margin: EdgeInsets.only(
                           left: AppDimensions.width20,
-                          right: AppDimensions.width20),
+                          right: AppDimensions.width20,
+                          bottom: AppDimensions.height10),
                       child: Row(children: [
                         Container(
-                          height: AppDimensions.height120,
+                          height: AppDimensions.width120,
                           width: AppDimensions.width120,
                           decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.circular(AppDimensions.width20),
-                              color: Colors.white38,
+                              color: AppColors.yellowColor,
                               image: const DecorationImage(
                                   image: AssetImage(
                                       "assets/images/foodimage1.png"))),
                         ),
-                        Column(
-                          children: const [],
+                        Expanded(
+                          child: Container(
+                            height: AppDimensions.width100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topRight:
+                                        Radius.circular(AppDimensions.radius20),
+                                    bottomRight: Radius.circular(
+                                        AppDimensions.radius20)),
+                                color: Colors.white),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  left: AppDimensions.width10,
+                                  right: AppDimensions.width10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const CustomBigText(
+                                      color: AppColors.titleColor,
+                                      text: "Nutritious fruit meal in China"),
+                                  SizedBox(
+                                    height: AppDimensions.height10,
+                                  ),
+                                  const CustomSmallText(
+                                      text: "With chinese characters"),
+                                  SizedBox(
+                                    height: AppDimensions.height10,
+                                  ),
+                                  const FoodsLowerDetails()
+                                ],
+                              ),
+                            ),
+                          ),
                         )
                       ]),
                     );

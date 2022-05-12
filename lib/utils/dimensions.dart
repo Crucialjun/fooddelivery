@@ -12,6 +12,7 @@ class AppDimensions {
   static double height15 = screenHeight / 56.27;
   static double height20 = screenHeight / 42.20;
   static double height30 = screenHeight / 28.13;
+  static double height40 = screenHeight / 21.10;
   static double height45 = screenHeight / 18.76;
   static double height60 = screenHeight / 14.07;
   static double height120 = screenHeight / 7.03;
@@ -21,6 +22,7 @@ class AppDimensions {
   static double width20 = screenWidth / 19.50;
   static double width30 = screenWidth / 13;
   static double width45 = screenWidth / 13;
+  static double width100 = screenWidth / 3.9;
   static double width120 = screenWidth / 3.25;
 
   static double font20 = screenHeight / 42.20;
@@ -36,4 +38,6 @@ class AppDimensions {
   static double iconsSize15 = screenHeight / 56.27;
 
   static double statusbarHeight = Get.mediaQuery.padding.top;
+
+  static double foodDetailsImageHeight = screenHeight / 2.41;
 }

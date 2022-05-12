@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/screens/main_dashboard.dart';
+import 'package:fooddelivery/screens/food_details.dart';
 import 'package:fooddelivery/utils/custom_scroll_behaviour.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainDashboard(),
+      home: const FoodDetails(),
     );
   }
 }
