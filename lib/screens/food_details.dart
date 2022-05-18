@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/app_colors.dart';
 import 'package:fooddelivery/utils/dimensions.dart';
-
-import '../widgets/custom_big_text.dart';
-import '../widgets/custom_small_text.dart';
-import '../widgets/food_lower_details.dart';
+import 'package:fooddelivery/widgets/app_column.dart';
+import 'package:fooddelivery/widgets/custom_big_text.dart';
 
 class FoodDetails extends StatelessWidget {
   const FoodDetails({Key? key}) : super(key: key);
@@ -12,6 +10,7 @@ class FoodDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(children: [
         Positioned(
             left: 0,
@@ -78,40 +77,28 @@ class FoodDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomBigText(
-                      color: Colors.black, text: "Chinese Side"),
-                  SizedBox(
-                    height: AppDimensions.height10,
-                  ),
-                  Row(
-                    children: [
-                      Wrap(
-                        children: List.generate(
-                            5,
-                            (index) => Icon(
-                                  Icons.star,
-                                  color: AppColors.mainColor,
-                                  size: AppDimensions.iconsSize15,
-                                )),
-                      ),
-                      SizedBox(
-                        width: AppDimensions.width10,
-                      ),
-                      const CustomSmallText(text: "4.5"),
-                      SizedBox(
-                        width: AppDimensions.width10,
-                      ),
-                      const CustomSmallText(text: "1287 comments"),
-                    ],
-                  ),
+                  const AppColumn(text: "Chinese Side"),
                   SizedBox(
                     height: AppDimensions.height20,
                   ),
-                  const FoodsLowerDetails()
+                  const CustomBigText(color: Colors.black, text: "Introduce")
                 ],
               ),
-            ))
+            )),
       ]),
+      bottomNavigationBar: Container(
+        height: 120,
+        padding: EdgeInsets.only(
+            top: AppDimensions.height30,
+            bottom: AppDimensions.height30,
+            right: AppDimensions.width20,
+            left: AppDimensions.width20),
+        decoration: BoxDecoration(
+            color: AppColors.buttonBackGroundColor,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(AppDimensions.radius20 * 2),
+                topRight: Radius.circular(AppDimensions.radius20 * 2))),
+      ),
     );
   }
 }

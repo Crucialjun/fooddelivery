@@ -27,6 +27,7 @@ class AppDimensions {
 
   static double font20 = screenHeight / 42.20;
   static double font12 = screenHeight / 70.33;
+  static double font26 = screenHeight / 32.46;
 
   static double radius20 = screenHeight / 42.20;
   static double radius30 = screenHeight / 28.13;

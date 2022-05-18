@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/app_colors.dart';
 import 'package:fooddelivery/utils/dimensions.dart';
-import 'package:fooddelivery/widgets/custom_big_text.dart';
-import 'package:fooddelivery/widgets/custom_small_text.dart';
-import 'package:fooddelivery/widgets/food_lower_details.dart';
+import 'package:fooddelivery/widgets/app_column.dart';
 
 class DashboardPageviewItem extends StatefulWidget {
   final int index;
@@ -87,46 +85,13 @@ class _DashboardPageviewItemState extends State<DashboardPageviewItem> {
                   borderRadius: BorderRadius.circular(AppDimensions.radius20),
                   color: Colors.white),
               child: Container(
-                padding: EdgeInsets.only(
-                    top: AppDimensions.height15,
-                    left: AppDimensions.width15,
-                    right: AppDimensions.width15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const CustomBigText(
-                        color: Colors.black, text: "Chinese Side"),
-                    SizedBox(
-                      height: AppDimensions.height10,
-                    ),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(
-                                    Icons.star,
-                                    color: AppColors.mainColor,
-                                    size: AppDimensions.iconsSize15,
-                                  )),
-                        ),
-                        SizedBox(
-                          width: AppDimensions.width10,
-                        ),
-                        const CustomSmallText(text: "4.5"),
-                        SizedBox(
-                          width: AppDimensions.width10,
-                        ),
-                        const CustomSmallText(text: "1287 comments"),
-                      ],
-                    ),
-                    SizedBox(
-                      height: AppDimensions.height20,
-                    ),
-                    const FoodsLowerDetails()
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.only(
+                      top: AppDimensions.height15,
+                      left: AppDimensions.width15,
+                      right: AppDimensions.width15),
+                  child: const AppColumn(
+                    text: "Chinese Side",
+                  )),
             ),
           )
         ],
